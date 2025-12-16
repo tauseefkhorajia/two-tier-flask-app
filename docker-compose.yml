@@ -23,9 +23,9 @@ services:
       start_period: 60s
 
   flask-app:
-   image: tauseefkhorajia/two-tier-flask-app:latest
-   container_name: flask-app
-    ports:
+    image: tauseefkhorajia/two-tier-flask-app:latest
+    container_name: flask-app
+      ports:
       - "5000:5000"
     environment:
       MYSQL_HOST: mysql
