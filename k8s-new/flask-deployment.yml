@@ -21,18 +21,15 @@ spec:
         - containerPort: 5000
         env:
         - name: MYSQL_HOST
-          value: 
+          value: mysql-service
          
         - name: MYSQL_USER
           value: admin
 
-        - name: mysql_database
-          valueFrom:
-            configMapKeyRef:
-              name: mysql-config
-              key: MYSQL_DB
+        - name: MYSQL_DB
+          value: devops
 
-        - name: mysql_password
+        - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret

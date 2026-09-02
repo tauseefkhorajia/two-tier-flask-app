@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql: latest
+        image: mysql:latest
         ports:
         - containerPort: 3306
 
@@ -24,19 +24,19 @@ spec:
         - name: MYSQL_USER
           value: admin
 
-        - name: mysql_database
+        - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
               name: mysql-config
               key: MYSQL_DATABASE
 
-        - name: mysql_root_password
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret
               key: MYSQL_ROOT_PASSWORD
 
-        - name: mysql_password
+        - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret
@@ -49,5 +49,5 @@ spec:
       volumes:
       - name: mysqldata
         persistentVolumeClaim:
-        claimName: mysql-pvc
+          claimName: mysql-pvc
 
