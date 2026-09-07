@@ -10,6 +10,7 @@ pipeline{
         }
         stage("build"){
             steps{
+                echo "build ho gaya"
                 sh "docker build -t two-tier-flask-app ."
             }
         }
